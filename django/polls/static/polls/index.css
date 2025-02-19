@@ -1,0 +1,100 @@
+/* Hero Section */
+body{
+    background: linear-gradient(45deg, #add8e6, #ffffff, #add8e6, #ffffff);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero {
+    background-image: url("images/herobackground.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/*Text section*/
+.main_text{
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 8vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+.text{
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 4vh;
+    margin-bottom: 8vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+/* Polls Container */
+
+.no-polls {
+    font-size: clamp(25px, 3vw, 40px);
+    font-weight: 700;
+    text-align: center;
+}
+
+.prihlasenie_text {
+    color: red;
+    font-size: 1rem;
+    padding: 10px 20px; 
+    width: 100%; 
+    margin: 0 auto; 
+
+}
+
+
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+    background-color: black;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: black;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    .main_text {
+        font-size: 1.2rem;
+    }
+    .text {
+        font-size: 1rem;
+    }
+}
+
+.hover-effect:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}

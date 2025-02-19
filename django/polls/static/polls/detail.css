@@ -1,0 +1,131 @@
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #add8e6, #ffffff, #add8e6, #ffffff);
+    color: #333;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container-fluid {
+    padding-top: 50px;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 15px;
+    background-color: white;
+}
+
+.card-header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+/* Poll Detail Styling */
+.poll-detail {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.question-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Choices Styling */
+.choices-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.choice {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 15px;
+    width: 48%; 
+    box-sizing: border-box; 
+}
+
+.choice:nth-child(odd) {
+    margin-right: 4%; 
+}
+
+.choice-label {
+    font-size: 1.2rem;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Radio Button Styling */
+.choice input[type="radio"] {
+    accent-color: black ;
+    width: 20px;
+    height: 20px;
+}
+
+/* Submit Button Styling */
+.submit-container {
+    text-align: center;
+}
+
+.vote-btn {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.vote-btn:hover {
+    background-color: rgb(24, 24, 24);
+    transform: scale(1.02);
+}
+
+.vote-btn:active {
+    transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        margin: 15px;
+    }
+    .question-title {
+        font-size: 1.6rem;
+    }
+    .vote-btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+img{
+    width: 50px;
+    height: auto;
+}

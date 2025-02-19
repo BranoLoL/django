@@ -1,0 +1,57 @@
+{% extends 'polls/header.html' %}
+
+{% block content %}
+  <div class="container-fluid d-flex align-items-center justify-content-center" style="height: 100vh;">
+    <div class="row justify-content-center w-100">
+      <div class="col-md-6">
+        <div class="card shadow-lg">
+          <div class="card-header text-center" style="background-color: black; color: white;">
+            <h3>Prihlásenie</h3>
+          </div>
+          <div class="card-body">
+            <form method="post">
+              {% csrf_token %}
+              <div class="mb-3 text-center">
+                Prihlasovacie meno: 
+                {{ form.username }}
+              </div>
+              {% if form.username.errors %}
+                <div class="text-danger text-center">
+                  {% for error in form.username.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              
+              <div class="mb-3 text-center">
+                Prihlasovacie heslo: 
+                {{ form.password }}
+              </div>
+              {% if form.password.errors %}
+                <div class="text-danger text-center">
+                  {% for error in form.password.errors %}
+                    <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              
+              <div class="d-grid">
+                <button type="submit" class="btn btn-dark">Prihlásiť sa</button>
+              </div>
+            </form>
+            {% if form.non_field_errors %}
+              <div class="text-danger text-center mt-3">
+                {% for error in form.non_field_errors %}
+                  <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <div class="mt-3 text-center">
+              <p class="small">Nenmáš účet? <a href="{% url 'polls:register' %}" class="text-dark">Registruj sa!</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

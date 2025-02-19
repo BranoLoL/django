@@ -1,0 +1,56 @@
+{% extends 'polls/header.html' %}
+
+{% block content %}
+    <link rel="stylesheet" href="../../static/polls/index.css">
+
+
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <h1 class="hero-title">NHL klub</h1>
+    </section>
+
+    <section>
+        <div class="main_text">Hlasujte za svojho najobľúbenejšieho hokejistu alebo tím</div>
+        <p class="text">Pridaj sa k nám a zúčastni sa našich ankiet. Tvoj hlas je dôležitý, takže neváhaj ovplyvniť výsledky a ukázať, kto je podľa teba najlepší hráč v NHL! Vyber si svojho favorita a zapoj sa do dynamickej diskusie o najväčších hviezdach hokeja.</p>
+    </section>
+
+
+    <section class="container">
+        <div class="row gap-4 js justify-content-center">
+        {% if user.is_authenticated %}
+            {% if latest_question_list %}
+                {% for question in latest_question_list %}
+                    {% if question.id == 2 %}
+                        <div class="col-lg-4 col-md-6 col-12 text-center mt-5">
+                            <a href="{% url 'polls:detail' question.id %}">
+                                <img src="../../static/polls/images/hokejista.png" class="h-50 img-fluid mb-3">
+                            </a>
+                            <a href="{% url 'polls:detail' question.id %}" class="d-grid text-decoration-none text-center">
+                                <button class="btn btn-lg text-white px-5 py-3 shadow-lg">
+                                    {{ question.question_text }}
+                                </button>
+                            </a>
+                        </div>
+                    {% endif %}
+                    {% if question.id == 1 %}
+                        <div class="col-lg-4 col-md-6 col-12 text-center mt-5">
+                            <a href="{% url 'polls:detail' question.id %}">
+                                <img src="../../static/polls/images/timy.png" class="h-50 img-fluid mb-3">
+                            </a>
+                            <a href="{% url 'polls:detail' question.id %}" class="d-grid text-decoration-none text-center">
+                                <button class="btn btn-lg text-white px-3 py-3 shadow-lg">
+                                    {{ question.question_text }}
+                                </button>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <p class="no-polls text-muted text-center">Žiadne položky nie sú momentálne k dispozícií. Pozrite neskôr!</p>
+            {% endif %}
+        {% else %}
+            <div class="prihlasenie_text text-center my-5">Musíte byť prihlásený, aby ste mohli hlasovať.</div>
+        {% endif %}
+        </div>
+    </section>
+{% endblock %}

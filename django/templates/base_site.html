@@ -1,0 +1,10 @@
+{% block branding %}
+<div id="site-name">
+    {% if user.is_authenticated %}
+        <a href="{% url 'admin:index' %}">Polls Administration</a>
+    {% endif %}
+</div>
+{% if user.is_anonymous %}
+    {% include "admin/color_theme_toggle.html" %}
+{% endif %}
+{% endblock %}
